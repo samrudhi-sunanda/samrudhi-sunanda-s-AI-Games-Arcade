@@ -1,0 +1,6 @@
+{
+  "name": "AI Games Arcade",
+  "description": "An interactive AI-based gaming platform with 7 playable games demonstrating Minimax, Backtracking, A* Search, Alpha-Beta Pruning, and Heuristics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
