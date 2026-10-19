@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-arcade: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-card: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --border-color: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  color-scheme: light;
+}
+
+:root.dark {
+  --bg-arcade: #080d1e;
+  --bg-surface: #0f172a;
+  --bg-surface-card: #0e1629;
+  --bg-surface-elevated: #1e293b;
+  --border-color: #1e293b;
+  --border-subtle: #172033;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-arcade);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Smooth transition for theme switching on common elements */
+*, *::before, *::after {
+  transition-property: background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Don't animate canvas or game physics */
+canvas, .no-theme-transition {
+  transition: none !important;
+}

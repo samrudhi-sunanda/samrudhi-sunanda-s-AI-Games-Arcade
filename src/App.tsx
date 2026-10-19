@@ -81,7 +81,7 @@ export default function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-200 flex flex-col font-sans ${
-      isDark ? 'bg-[#080d1e] text-slate-100' : 'bg-slate-900 text-slate-100'
+      isDark ? 'bg-[#080d1e] text-slate-100' : 'bg-[#f8fafc] text-slate-900'
     }`}>
       {/* Navbar */}
       <Navbar

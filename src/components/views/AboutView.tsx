@@ -38,13 +38,13 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveView }) => {
     <div className="space-y-14 py-6 sm:py-10 max-w-5xl mx-auto">
       {/* Header */}
       <div className="text-center space-y-3">
-        <span className="inline-block px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-purple-900/50 text-purple-300 border border-purple-500/40">
+        <span className="inline-block px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-purple-100 text-purple-700 border border-purple-200 dark:bg-purple-900/50 dark:text-purple-300 dark:border-purple-500/40 transition-colors">
           Academic Mini-Project Documentation
         </span>
-        <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight transition-colors">
           About AI Games Arcade
         </h1>
-        <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed transition-colors">
           A collegiate engineering project developed to translate abstract Artificial Intelligence theory into interactive, playable browser simulations.
         </p>
       </div>
@@ -52,14 +52,14 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveView }) => {
       {/* MEET OUR TEAM SECTION */}
       <section className="space-y-6">
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-purple-400">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">
             <Users className="w-4 h-4" />
             <span>Project Contributors</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight transition-colors">
             Meet Our Team
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto leading-relaxed transition-colors">
             "Built collaboratively through creativity, problem-solving, and Artificial Intelligence."
           </p>
         </div>
@@ -69,15 +69,15 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveView }) => {
           {TEAM_MEMBERS.map((member) => (
             <div
               key={member.id}
-              className="relative rounded-3xl bg-gradient-to-br from-[#0f172a] via-[#121c38] to-[#171333] border border-indigo-500/30 p-6 sm:p-7 shadow-xl hover:shadow-2xl hover:border-indigo-500/50 transition-all duration-200 flex flex-col justify-between"
+              className="relative rounded-3xl bg-gradient-to-br from-white via-indigo-50/30 to-slate-50 border border-slate-200 shadow-md hover:shadow-xl dark:from-[#0f172a] dark:via-[#121c38] dark:to-[#171333] dark:border-indigo-500/30 p-6 sm:p-7 dark:shadow-xl hover:border-indigo-300 dark:hover:border-indigo-500/50 transition-all duration-200 flex flex-col justify-between"
             >
               <div>
                 {/* Profile Avatar & Header Header */}
                 <div className="flex items-start gap-4 mb-5">
                   {/* Initials Avatar / Image Placeholder */}
-                  <div className={`w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-gradient-to-tr ${member.avatarGradient} p-0.5 shadow-lg shadow-indigo-500/25 shrink-0`}>
-                    <div className="w-full h-full bg-[#0d142d] rounded-[14px] flex items-center justify-center">
-                      <span className="font-black text-xl sm:text-2xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-indigo-200">
+                  <div className={`w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-gradient-to-tr ${member.avatarGradient} p-0.5 shadow-md shadow-indigo-500/20 shrink-0`}>
+                    <div className="w-full h-full bg-slate-50 dark:bg-[#0d142d] rounded-[14px] flex items-center justify-center transition-colors">
+                      <span className="font-black text-xl sm:text-2xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-purple-700 dark:from-white dark:via-slate-100 dark:to-indigo-200">
                         {member.initials}
                       </span>
                     </div>
@@ -89,35 +89,35 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveView }) => {
                         {member.role}
                       </span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight break-words">
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight break-words transition-colors">
                       {member.name}
                     </h3>
-                    <p className="text-xs text-indigo-300 font-medium mt-0.5">
+                    <p className="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-0.5">
                       {member.tag}
                     </p>
                   </div>
                 </div>
 
                 {/* Core Responsibilities Summary */}
-                <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 mb-4">
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
-                    <Briefcase className="w-3.5 h-3.5 text-purple-400" />
+                <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 mb-4 transition-colors">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider mb-1">
+                    <Briefcase className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
                     <span>Role & Scope</span>
                   </div>
-                  <p className="text-xs text-slate-300 leading-relaxed">
+                  <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                     {member.responsibilitiesSummary}
                   </p>
                 </div>
 
                 {/* Detailed Responsibilities List */}
                 <div className="space-y-2">
-                  <h4 className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                  <h4 className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     Key Contributions & Responsibilities:
                   </h4>
-                  <ul className="space-y-1.5 text-xs text-slate-300">
+                  <ul className="space-y-1.5 text-xs text-slate-700 dark:text-slate-300">
                     {member.responsibilities.map((resp, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                         <span className="leading-snug">{resp}</span>
                       </li>
                     ))}
@@ -126,9 +126,9 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveView }) => {
               </div>
 
               {/* Department & Project affiliation footer */}
-              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+              <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 transition-colors">
                 <span>Department of Computer Engineering</span>
-                <span className="text-indigo-400 font-medium">AI Mini-Project</span>
+                <span className="text-indigo-600 dark:text-indigo-400 font-medium">AI Mini-Project</span>
               </div>
             </div>
           ))}
@@ -136,50 +136,50 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveView }) => {
       </section>
 
       {/* Student Author & Project Information Card */}
-      <div className="rounded-3xl bg-gradient-to-br from-[#101935] via-[#141b3d] to-[#1a1236] border border-indigo-500/30 p-6 sm:p-8 shadow-2xl space-y-6">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-800/80 pb-6">
+      <div className="rounded-3xl bg-gradient-to-br from-indigo-50/70 via-white to-purple-50/60 border border-indigo-100 shadow-lg dark:from-[#101935] dark:via-[#141b3d] dark:to-[#1a1236] dark:border-indigo-500/30 p-6 sm:p-8 dark:shadow-2xl space-y-6 transition-all">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-200 dark:border-slate-800/80 pb-6 transition-colors">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-purple-600/30 font-black text-lg">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-purple-600/25 font-black text-lg">
               SS
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="text-lg sm:text-xl font-extrabold text-white">Project Overview</h3>
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-purple-950 text-purple-300 border border-purple-800/40">
+                <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white transition-colors">Project Overview</h3>
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-purple-100 text-purple-700 border border-purple-200 dark:bg-purple-950 dark:text-purple-300 dark:border-purple-800/40">
                   Third-Year Mini-Project
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mt-0.5">
+              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium mt-0.5">
                 Department of Computer Engineering
               </p>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 Bachelor of Engineering (Computer Engineering)
               </p>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-2 text-xs">
-            <div className="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300">
+            <div className="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 shadow-xs">
               <span className="text-slate-500">Project:</span>{' '}
-              <strong className="text-white">AI Games Arcade</strong>
+              <strong className="text-slate-900 dark:text-white">AI Games Arcade</strong>
             </div>
-            <div className="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300">
+            <div className="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 shadow-xs">
               <span className="text-slate-500">Scope:</span>{' '}
-              <strong className="text-emerald-400">7 Playable AI Games</strong>
+              <strong className="text-emerald-600 dark:text-emerald-400">7 Playable AI Games</strong>
             </div>
           </div>
         </div>
 
         {/* Project Abstract */}
         <div className="space-y-3">
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-purple-400 flex items-center gap-1.5">
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-purple-600 dark:text-purple-400 flex items-center gap-1.5">
             <Terminal className="w-3.5 h-3.5" />
             <span>Project Abstract & Technical Scope</span>
           </h3>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
             The <strong>AI Games Arcade</strong> is a standalone web application designed as a Third-Year Computer Engineering mini-project. It addresses the pedagogical disconnect between theoretical Artificial Intelligence coursework and tangible practical implementations.
           </p>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
             Rather than relying on black-box external cloud APIs or static simulations, all seven games execute real algorithmic decision engines client-side in TypeScript. Students and evaluators can inspect search trees, watch A* graph traversals, test Minimax depth penalization, inspect CSP backtracking steps, and evaluate how heuristic utility formulas balance multiple strategic dimensions.
           </p>
         </div>
@@ -188,14 +188,14 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveView }) => {
       {/* AI Learning Center — 8 Core Concepts Breakdown */}
       <section className="space-y-6">
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-indigo-400">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
             <BookOpen className="w-4 h-4" />
-            <span>Comprehensive Syllabus Syllabus Mapping</span>
+            <span>Comprehensive Syllabus Mapping</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight transition-colors">
             AI Learning Center: 8 Fundamental Concepts
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto transition-colors">
             Click on any module below to inspect the mathematical formulation, algorithmic execution steps, time/space complexity, and practical engineering use cases.
           </p>
         </div>
@@ -205,28 +205,28 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveView }) => {
             <div
               key={concept.id}
               onClick={() => handleOpenConcept(concept)}
-              className="group p-5 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition-all duration-200 cursor-pointer shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex flex-col justify-between"
+              className="group p-5 rounded-2xl bg-white dark:bg-slate-900/80 hover:bg-slate-50/80 dark:hover:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/50 transition-all duration-200 cursor-pointer shadow-md hover:shadow-xl hover:-translate-y-0.5 flex flex-col justify-between"
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-purple-900/40 text-purple-300 border border-purple-500/30">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-purple-100 text-purple-700 border border-purple-200 dark:bg-purple-900/40 dark:text-purple-300 dark:border-purple-500/30">
                     Concept #{concept.number}
                   </span>
-                  <span className="text-[11px] font-medium text-slate-400">
+                  <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
                     {concept.associatedGame}
                   </span>
                 </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
                   {concept.title}
                 </h3>
 
-                <p className="text-xs text-slate-400 leading-relaxed line-clamp-2">
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2">
                   {concept.description}
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-indigo-400 font-semibold">
+              <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-indigo-600 dark:text-indigo-400 font-semibold">
                 <span>View Full Mathematical Analysis</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
@@ -236,27 +236,27 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveView }) => {
       </section>
 
       {/* Technology & Architectural Architecture */}
-      <section className="p-6 sm:p-8 rounded-3xl bg-slate-900/70 border border-slate-800 space-y-4">
-        <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2">
-          <Cpu className="w-5 h-5 text-indigo-400" />
+      <section className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 transition-colors">
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-2 transition-colors">
+          <Cpu className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
           <span>Technology Stack & Architecture</span>
         </h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-          <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/60">
-            <span className="text-slate-400 block mb-1">Frontend UI</span>
-            <strong className="text-white text-sm">React 19 & TypeScript</strong>
+          <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 shadow-xs">
+            <span className="text-slate-500 dark:text-slate-400 block mb-1">Frontend UI</span>
+            <strong className="text-slate-900 dark:text-white text-sm">React 19 & TypeScript</strong>
           </div>
-          <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/60">
-            <span className="text-slate-400 block mb-1">Styling Engine</span>
-            <strong className="text-white text-sm">Tailwind CSS v4</strong>
+          <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 shadow-xs">
+            <span className="text-slate-500 dark:text-slate-400 block mb-1">Styling Engine</span>
+            <strong className="text-slate-900 dark:text-white text-sm">Tailwind CSS v4</strong>
           </div>
-          <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/60">
-            <span className="text-slate-400 block mb-1">Audio Synthesis</span>
-            <strong className="text-white text-sm">Web Audio API</strong>
+          <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 shadow-xs">
+            <span className="text-slate-500 dark:text-slate-400 block mb-1">Audio Synthesis</span>
+            <strong className="text-slate-900 dark:text-white text-sm">Web Audio API</strong>
           </div>
-          <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/60">
-            <span className="text-slate-400 block mb-1">Persistence</span>
-            <strong className="text-white text-sm">HTML5 LocalStorage</strong>
+          <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 shadow-xs">
+            <span className="text-slate-500 dark:text-slate-400 block mb-1">Persistence</span>
+            <strong className="text-slate-900 dark:text-white text-sm">HTML5 LocalStorage</strong>
           </div>
         </div>
       </section>

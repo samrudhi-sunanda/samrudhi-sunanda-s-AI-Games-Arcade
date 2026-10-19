@@ -149,7 +149,7 @@ export const storage = {
       const stored = localStorage.getItem(THEME_KEY);
       if (stored === 'light' || stored === 'dark') return stored;
     } catch {}
-    return 'dark'; // default to gaming dark theme
+    return 'light'; // default to light theme as requested
   },
 
   setTheme(theme: 'dark' | 'light'): void {

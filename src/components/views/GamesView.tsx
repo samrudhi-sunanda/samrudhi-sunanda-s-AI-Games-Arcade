@@ -54,19 +54,19 @@ export const GamesView: React.FC<GamesViewProps> = ({ setActiveView }) => {
     <div className="space-y-8 py-6 sm:py-8 max-w-6xl mx-auto">
       {/* Header */}
       <div className="text-center space-y-2">
-        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-purple-900/40 text-purple-300 border border-purple-600/30">
+        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-purple-100 text-purple-700 border border-purple-200 dark:bg-purple-900/40 dark:text-purple-300 dark:border-purple-600/30 transition-colors">
           Curated AI Game Collection
         </span>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight transition-colors">
           All 7 Playable AI Games
         </h1>
-        <p className="text-sm text-slate-400 max-w-xl mx-auto">
+        <p className="text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto transition-colors">
           Explore interactive algorithms: test game-tree search in Tic-Tac-Toe and Connect 4, graph pathfinding in Maze Solver, constraint solving in Sudoku, and more.
         </p>
       </div>
 
       {/* Search & Filter Controls */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm transition-colors">
         {/* Search Input */}
         <div className="relative w-full sm:w-72">
           <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -75,12 +75,12 @@ export const GamesView: React.FC<GamesViewProps> = ({ setActiveView }) => {
             placeholder="Search by game, algorithm, or tag..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-3.5 py-2 text-xs rounded-xl bg-slate-800 text-white border border-slate-700/80 focus:border-indigo-500 focus:outline-none placeholder:text-slate-500"
+            className="w-full pl-9 pr-3.5 py-2 text-xs rounded-xl bg-slate-50 text-slate-800 border border-slate-200 focus:border-indigo-500 focus:outline-none placeholder:text-slate-400 dark:bg-slate-800 dark:text-white dark:border-slate-700/80 dark:placeholder:text-slate-500 transition-colors"
           />
         </div>
 
         {/* Difficulty Filter Tabs */}
-        <div className="flex items-center gap-1.5 p-1 bg-slate-950 rounded-xl border border-slate-800 text-xs">
+        <div className="flex items-center gap-1.5 p-1 bg-slate-100 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 text-xs transition-colors">
           {['all', 'beginner', 'intermediate', 'advanced'].map((lvl) => (
             <button
               key={lvl}
@@ -90,8 +90,8 @@ export const GamesView: React.FC<GamesViewProps> = ({ setActiveView }) => {
               }}
               className={`px-3 py-1.5 rounded-lg font-semibold uppercase tracking-wider capitalize transition-all cursor-pointer ${
                 filterDifficulty === lvl
-                  ? 'bg-indigo-600 text-white shadow'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-indigo-600 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
               }`}
             >
               {lvl}
@@ -108,7 +108,7 @@ export const GamesView: React.FC<GamesViewProps> = ({ setActiveView }) => {
           return (
             <div
               key={game.id}
-              className="group rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 shadow-xl hover:shadow-2xl hover:shadow-indigo-950/40"
+              className="group rounded-3xl bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-500/50 p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 shadow-md hover:shadow-xl dark:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-indigo-950/40"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -120,30 +120,30 @@ export const GamesView: React.FC<GamesViewProps> = ({ setActiveView }) => {
                   </div>
                   <div className="flex items-center gap-2">
                     <kbd 
-                      className="px-2 py-0.5 rounded-lg bg-indigo-950/90 text-indigo-300 border border-indigo-700/50 text-[11px] font-mono font-bold shadow-sm"
+                      className="px-2 py-0.5 rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-200 dark:bg-indigo-950/90 dark:text-indigo-300 dark:border-indigo-700/50 text-[11px] font-mono font-bold shadow-xs"
                       title={`Press ${shortcutNum} to play`}
                     >
                       [{shortcutNum}]
                     </kbd>
                     <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
                       game.difficultyRating === 'Beginner'
-                        ? 'bg-emerald-950 text-emerald-300 border border-emerald-500/30'
+                        ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950 dark:text-emerald-300 dark:border-emerald-500/30'
                         : game.difficultyRating === 'Intermediate'
-                        ? 'bg-amber-950 text-amber-300 border border-amber-500/30'
-                        : 'bg-rose-950 text-rose-300 border border-rose-500/30'
+                        ? 'bg-amber-50 text-amber-700 border border-amber-200 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-500/30'
+                        : 'bg-rose-50 text-rose-700 border border-rose-200 dark:bg-rose-950 dark:text-rose-300 dark:border-rose-500/30'
                     }`}>
                       {game.difficultyRating}
                     </span>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-indigo-300 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
                   {game.title}
                 </h3>
-                <p className="text-xs font-semibold text-purple-400 mt-0.5">
+                <p className="text-xs font-semibold text-purple-600 dark:text-purple-400 mt-0.5">
                   {game.concept}
                 </p>
-                <p className="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                <p className="text-xs text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
                   {game.description}
                 </p>
 
@@ -151,7 +151,7 @@ export const GamesView: React.FC<GamesViewProps> = ({ setActiveView }) => {
                   {game.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700/60"
+                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-100 text-slate-700 border border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700/60"
                     >
                       {tag}
                     </span>
@@ -159,7 +159,7 @@ export const GamesView: React.FC<GamesViewProps> = ({ setActiveView }) => {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-800">
+              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800">
                 <button
                   onClick={() => handlePlayGame(game.id as ActiveView)}
                   className="w-full py-2.5 px-4 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-indigo-600 hover:bg-indigo-500 shadow-md shadow-indigo-600/30 flex items-center justify-between gap-2 transition-all cursor-pointer"
@@ -168,7 +168,7 @@ export const GamesView: React.FC<GamesViewProps> = ({ setActiveView }) => {
                     <Play className="w-3.5 h-3.5 fill-white" />
                     <span>Play {game.title}</span>
                   </div>
-                  <kbd className="px-1.5 py-0.5 rounded bg-black/30 text-[10px] font-mono text-indigo-200">
+                  <kbd className="px-1.5 py-0.5 rounded bg-black/20 text-[10px] font-mono text-indigo-100">
                     Press {shortcutNum}
                   </kbd>
                 </button>
