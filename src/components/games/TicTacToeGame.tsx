@@ -153,7 +153,7 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-medium bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700/60 transition-all cursor-pointer shadow-sm"
+          className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-medium bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 dark:text-slate-200 dark:border-slate-700/60 transition-all cursor-pointer shadow-xs"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Arcade</span>
@@ -165,15 +165,15 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
               soundManager.playClick();
               setShowQuickStart(true);
             }}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-950/70 hover:bg-purple-900/80 text-purple-200 border border-purple-500/40 transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 dark:bg-purple-950/70 dark:hover:bg-purple-900/80 dark:text-purple-200 dark:border-purple-500/40 transition-colors cursor-pointer"
           >
-            <HelpCircle className="w-3.5 h-3.5 text-purple-300" />
+            <HelpCircle className="w-3.5 h-3.5 text-purple-600 dark:text-purple-300" />
             <span>Quick Start</span>
           </button>
 
           <button
             onClick={() => setShowAlgorithmModal(true)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-indigo-950/70 hover:bg-indigo-900/80 text-indigo-300 border border-indigo-700/40 transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 dark:bg-indigo-950/70 dark:hover:bg-indigo-900/80 dark:text-indigo-300 dark:border-indigo-700/40 transition-colors cursor-pointer"
           >
             <Info className="w-3.5 h-3.5" />
             <span>AI Algorithm (Minimax)</span>
@@ -181,7 +181,7 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
 
           <button
             onClick={() => resetGame()}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-purple-900/60 hover:bg-purple-800/70 text-purple-200 border border-purple-500/40 transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-purple-100 hover:bg-purple-200 text-purple-800 border border-purple-300 dark:bg-purple-900/60 dark:hover:bg-purple-800/70 dark:text-purple-200 dark:border-purple-500/40 transition-colors cursor-pointer"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Restart</span>
@@ -191,23 +191,23 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
 
       {/* Title Lockup */}
       <div className="text-center mb-8">
-        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-900/40 text-blue-300 border border-blue-600/30 mb-2">
+        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-100 text-blue-700 border border-blue-200 dark:bg-blue-900/40 dark:text-blue-300 dark:border-blue-600/30 mb-2">
           Game 1 · Adversarial Search
         </span>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           Tic-Tac-Toe Minimax
         </h1>
-        <p className="text-sm text-slate-400 mt-1 max-w-lg mx-auto">
+        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-lg mx-auto">
           Play against a game-tree search agent. In Hard mode, the AI explores all 255,168 possible leaf states using Minimax to make zero mistakes.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
         {/* Game Settings & Controls Panel */}
-        <div className="space-y-5 rounded-2xl bg-[#0f172a]/90 border border-slate-800 p-5 shadow-xl">
+        <div className="space-y-5 rounded-2xl bg-white dark:bg-[#0f172a]/90 border border-slate-200 dark:border-slate-800 p-5 shadow-lg dark:shadow-xl transition-colors">
           {/* Symbol Selector */}
           <div>
-            <label className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 block">
+            <label className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2 block">
               Choose Your Side
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -216,7 +216,7 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
                 className={`py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
                   playerSymbol === 'X'
                     ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20 border border-blue-400/40'
-                    : 'bg-slate-800/80 text-slate-400 hover:text-white border border-slate-700/50'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 dark:bg-slate-800/80 dark:text-slate-400 dark:hover:text-white dark:border-slate-700/50'
                 }`}
               >
                 <span className="text-lg">X</span>
@@ -227,7 +227,7 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
                 className={`py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
                   playerSymbol === 'O'
                     ? 'bg-pink-600 text-white shadow-md shadow-pink-500/20 border border-pink-400/40'
-                    : 'bg-slate-800/80 text-slate-400 hover:text-white border border-slate-700/50'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 dark:bg-slate-800/80 dark:text-slate-400 dark:hover:text-white dark:border-slate-700/50'
                 }`}
               >
                 <span className="text-lg">O</span>
@@ -238,10 +238,10 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
 
           {/* Difficulty Selector */}
           <div>
-            <label className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 block">
+            <label className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2 block">
               AI Difficulty Level
             </label>
-            <div className="grid grid-cols-3 gap-1.5 p-1 bg-slate-900/90 rounded-xl border border-slate-800">
+            <div className="grid grid-cols-3 gap-1.5 p-1 bg-slate-100 dark:bg-slate-900/90 rounded-xl border border-slate-200 dark:border-slate-800">
               {(['easy', 'medium', 'hard'] as Difficulty[]).map((level) => (
                 <button
                   key={level}
@@ -249,18 +249,18 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
                   className={`py-1.5 text-xs font-semibold uppercase tracking-wider rounded-lg transition-all capitalize cursor-pointer ${
                     difficulty === level
                       ? level === 'hard'
-                        ? 'bg-red-600/90 text-white shadow'
+                        ? 'bg-red-600 text-white shadow'
                         : level === 'medium'
-                        ? 'bg-amber-600/90 text-white shadow'
-                        : 'bg-emerald-600/90 text-white shadow'
-                      : 'text-slate-400 hover:text-white'
+                        ? 'bg-amber-600 text-white shadow'
+                        : 'bg-emerald-600 text-white shadow'
+                      : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                   }`}
                 >
                   {level}
                 </button>
               ))}
             </div>
-            <p className="text-[11px] text-slate-400 mt-2">
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2">
               {difficulty === 'hard' && '🔥 Hard: Full Minimax. Completely mathematically unbeatable.'}
               {difficulty === 'medium' && '⚡ Medium: Strategic wins/blocks with 45% random slips.'}
               {difficulty === 'easy' && '🌱 Easy: Plays legal moves uniformly at random.'}
@@ -268,23 +268,23 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
           </div>
 
           {/* Stats Bar */}
-          <div className="pt-4 border-t border-slate-800">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
-              <Trophy className="w-3.5 h-3.5 text-amber-400" />
+          <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-1.5">
+              <Trophy className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400" />
               <span>Session Scoreboard</span>
             </h3>
             <div className="grid grid-cols-3 gap-2 text-center">
-              <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800">
-                <p className="text-xs text-emerald-400 font-semibold">Wins</p>
-                <p className="text-lg font-bold text-white font-mono">{stats.wins}</p>
+              <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+                <p className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold">Wins</p>
+                <p className="text-lg font-bold text-slate-900 dark:text-white font-mono">{stats.wins}</p>
               </div>
-              <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800">
-                <p className="text-xs text-red-400 font-semibold">Losses</p>
-                <p className="text-lg font-bold text-white font-mono">{stats.losses}</p>
+              <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+                <p className="text-xs text-red-600 dark:text-red-400 font-semibold">Losses</p>
+                <p className="text-lg font-bold text-slate-900 dark:text-white font-mono">{stats.losses}</p>
               </div>
-              <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800">
-                <p className="text-xs text-slate-400 font-semibold">Draws</p>
-                <p className="text-lg font-bold text-white font-mono">{stats.draws}</p>
+              <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold">Draws</p>
+                <p className="text-lg font-bold text-slate-900 dark:text-white font-mono">{stats.draws}</p>
               </div>
             </div>
           </div>
@@ -340,7 +340,7 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
           </div>
 
           {/* 3x3 Grid */}
-          <div className="relative p-3 rounded-3xl bg-slate-900/90 border-2 border-indigo-500/20 shadow-2xl shadow-indigo-950/50 backdrop-blur-md">
+          <div className="relative p-3 rounded-3xl bg-white dark:bg-slate-900/90 border-2 border-slate-200 dark:border-indigo-500/20 shadow-xl dark:shadow-2xl dark:shadow-indigo-950/50 backdrop-blur-md transition-colors">
             <div className="grid grid-cols-3 gap-3 w-72 h-72 sm:w-84 sm:h-84">
               {board.map((cell, index) => {
                 const isWinningCell = winningLine?.includes(index);
@@ -352,19 +352,19 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
                     aria-label={`Cell ${index + 1}: ${cell || 'Empty'}`}
                     className={`relative rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-extrabold transition-all duration-150 select-none cursor-pointer ${
                       cell === null
-                        ? 'bg-slate-800/80 hover:bg-slate-700/80 active:scale-95 border border-slate-700/50 hover:border-indigo-500/50'
+                        ? 'bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 active:scale-95 border border-slate-200 dark:border-slate-700/50 hover:border-indigo-400 dark:hover:border-indigo-500/50'
                         : isWinningCell
-                        ? 'bg-gradient-to-tr from-amber-500/30 to-yellow-400/30 border-2 border-amber-400 text-amber-300 shadow-lg shadow-amber-500/20'
-                        : 'bg-slate-800/90 border border-slate-700'
+                        ? 'bg-gradient-to-tr from-amber-200 to-yellow-200 dark:from-amber-500/30 dark:to-yellow-400/30 border-2 border-amber-500 dark:border-amber-400 text-amber-700 dark:text-amber-300 shadow-lg shadow-amber-500/20'
+                        : 'bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700'
                     }`}
                   >
                     {cell === 'X' && (
-                      <span className="text-blue-400 animate-in zoom-in-50 duration-150 drop-shadow-[0_0_12px_rgba(59,130,246,0.6)]">
+                      <span className="text-blue-600 dark:text-blue-400 animate-in zoom-in-50 duration-150 drop-shadow-[0_0_12px_rgba(59,130,246,0.4)]">
                         X
                       </span>
                     )}
                     {cell === 'O' && (
-                      <span className="text-pink-400 animate-in zoom-in-50 duration-150 drop-shadow-[0_0_12px_rgba(236,72,153,0.6)]">
+                      <span className="text-pink-600 dark:text-pink-400 animate-in zoom-in-50 duration-150 drop-shadow-[0_0_12px_rgba(236,72,153,0.4)]">
                         O
                       </span>
                     )}
@@ -385,7 +385,7 @@ export const TicTacToeGame: React.FC<TicTacToeProps> = ({ onBack }) => {
               </button>
               <button
                 onClick={onBack}
-                className="px-4 py-2.5 rounded-xl text-sm font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 cursor-pointer"
+                className="px-4 py-2.5 rounded-xl text-sm font-semibold bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 dark:border-slate-700 cursor-pointer"
               >
                 Back to Arcade
               </button>
